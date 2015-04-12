@@ -1,7 +1,7 @@
 # MonitorNewsFeeds
 一个监听搜集互联网上的新闻推送信息流（RSS）的小爬虫 using Python
 
-该程序基于 MOOC课程  MITx: 6.00.1x 计算机科学和Python编程导论  PS 7
+该程序基于 MOOC课程  MITx: 6.00.1x 计算机科学和Python编程导论  PS 7，具体可查看项目名下的链接。
 个人觉得是个不错的既学习Python又学习爬虫的好项目，弄下来学习并尝试自己修改之。
 除了该PS作业要求部分为个人完成，其他部分均为课程提供。
 
