@@ -258,6 +258,15 @@ def main_thread(master):
     # A sample trigger list - you'll replace
     # this with something more configurable in Problem 11
     try:
+        # These will probably generate a few hits...
+        t1 = TitleTrigger("Obama")
+        t2 = SubjectTrigger("Romney")
+        t3 = PhraseTrigger("Election")
+        t4 = OrTrigger(t2, t3)
+        triggerlist = [t1, t4]
+        
+        # TODO: Problem 11
+        # After implementing makeTrigger, uncomment the line below:
         triggerlist = readTriggerConfig("triggers.txt")
 
         # **** from here down is about drawing ****
@@ -266,7 +275,7 @@ def main_thread(master):
         scrollbar = Scrollbar(master)
         scrollbar.pack(side=RIGHT,fill=Y)
         
-        t = "Maples7's Blog News"
+        t = "Google & Yahoo Top News"
         title = StringVar()
         title.set(t)
         ttl = Label(master, textvariable=title, font=("Helvetica", 18))
@@ -291,11 +300,10 @@ def main_thread(master):
 
             print "Polling . . .",
             # Get stories from Google's Top Stories RSS news feed
-            #stories = process("http://news.google.com/?output=rss")
-            stories = process("http://feed.cnblogs.com/blog/u/201922/rss")
+            stories = process("http://news.google.com/?output=rss")
 
             # Get stories from Yahoo's Top Stories RSS news feed
-            #stories.extend(process("http://rss.news.yahoo.com/rss/topstories"))
+            stories.extend(process("http://rss.news.yahoo.com/rss/topstories"))
 
             # Process the stories
             stories = filterStories(stories, triggerlist)
